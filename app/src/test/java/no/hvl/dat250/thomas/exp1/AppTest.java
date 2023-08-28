@@ -5,10 +5,22 @@ package no.hvl.dat250.thomas.exp1;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import no.hvl.dat250.thomas.exp1.Converter;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    @Test void ConversionTest1() {
+        final double IN_TO_METER = 0.0254;
+        final double FT_TO_METER = 0.3048;
+        final double MI_TO_METER = 1609.344;
+
+        double value = 10;
+        String inStr = "m";
+        String outStr = "in";
+
+        double answer = value / IN_TO_METER;
+
+        assertEquals(answer, Converter.convert(value, inStr, outStr));
+
+
     }
 }
