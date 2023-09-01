@@ -20,7 +20,18 @@ class AppTest {
         double answer = value / IN_TO_METER;
 
         assertEquals(answer, Converter.convert(value, inStr, outStr));
+    }
 
+    @Test void ConversionTest2() {
+        final double IN_TO_METER = 0.0254;
+        final double FT_TO_METER = 0.3048;
+        final double MI_TO_METER = 1609.344;
+        double value = 50;
+        String inStr = "ft";
+        String outStr = "m";
 
+        double answer = value * FT_TO_METER;
+
+        assertEquals(answer, Converter.convert(value, inStr, outStr));
     }
 }
